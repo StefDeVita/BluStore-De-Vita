@@ -16,6 +16,23 @@
   justify-content: space-around;
   background-color: rgb(14, 204, 218);
 }
+#saludo{
+  font-size: 2rem;
+}
+.contenedor{
+  margin: 1rem;
+  color: #3d5a6c;
+}
 a{
   text-decoration: none;
+}
+#imagenCarrito{
+  width: 100%;
+}
+#carrito{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
 }
