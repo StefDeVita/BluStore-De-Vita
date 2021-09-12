@@ -19,6 +19,9 @@
 #saludo{
   font-size: 2rem;
 }
+.btn{
+  margin: 1rem;
+}
 .contenedor{
   margin: 1rem;
   color: #3d5a6c;
