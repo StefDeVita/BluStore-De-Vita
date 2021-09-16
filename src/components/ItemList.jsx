@@ -9,7 +9,7 @@ const ItemList = ({productos}) => {
         setCargando(true);
         getProductos().then(result => setItems(result))
         .finally(() => setCargando(false));
-    }, [])
+    },[])
     const getProductos = () => {
         return new Promise((resolve) => {
             setTimeout(() =>{

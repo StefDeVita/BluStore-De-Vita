@@ -1,16 +1,18 @@
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
-import ItemCount from './components/ItemCount';
-import ItemList from './components/ItemList';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
       <NavBar/>
-      <ItemListContainer/>
-      
-    </div>
+      <Switch>
+        <Route exact path="/" component={ItemListContainer} />
+        <Route exact path="*" component={NotFound}/>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
