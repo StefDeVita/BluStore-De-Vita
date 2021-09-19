@@ -5,7 +5,7 @@ import {Link} from "react-router-dom"
 const Item = ({producto}) => {
     return (
         
-    <div className="col mb-5">
+    
         <div className="card">
             <Link to={`/product/${producto.id}`}><img className="card-img-top img-fluid" src={producto.imagen} alt={producto.nombre}/></Link>
             <div className="card-body">
@@ -16,7 +16,7 @@ const Item = ({producto}) => {
         <div className="card-body text-center">
         </div>
     </div>
-    </div>
+    
         
     );
 };

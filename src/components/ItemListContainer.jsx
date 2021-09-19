@@ -1,50 +1,23 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import ItemList from './ItemList'
 
 const ItemListContainer = () => {
-    return (
-        <div className="contenedor">
-            <ItemList productos={productos}/>
+  const [productos,setProductos] = useState([]);  
+  useEffect(() =>{
+    fetch("http://localhost:3001/productos")
+    .then((response) => response.json())
+    .then((data)=> setProductos(data))
+    
+    .catch((error) => console.log("ha habido un error"))
+  },[]);
+  return (
+        <div className="d-flex justify-content-around">
+          <ItemList productos={productos}/>
         </div>
+       
     );
 };
 
 
-const productos = [
-    {
-      id: 0,
-      nombre: " Halloween (1978) - Collector's Edition [4K UHD] [Blu-ray] ",
-      descripcion: "Esta es la descripción del producto 1",
-      precio: 690,
-      imagen: "https://m.media-amazon.com/images/I/81TzYGqfJjS._SY445_.jpg",
-    },
-    {
-      id: 1,
-      nombre: " F9: The Fast Saga - Director's Cut Blu-ray + DVD + Digital ",
-      descripcion: "Esta es la descripción del producto 2",
-      precio: 750,
-      imagen: "https://m.media-amazon.com/images/I/81oQdDUC5qL._SX342_.jpg",
-    },
-    {
-      id: 2,
-      nombre: " Inglourious Basterds - 4K Ultra HD + Blu-ray",
-      descripcion: "Esta es la descripción del producto 3",
-      precio: 850,
-      imagen: "https://m.media-amazon.com/images/I/71WjOpXmr7L._SX342_.jpg",
-    },
-    {
-      id: 3,
-      nombre: " Clockwork Orange, A (4K Ultra HD + Blu-ray) ",
-      descripcion: "Esta es la descripción del producto 4",
-      precio: 800,
-      imagen: "https://m.media-amazon.com/images/I/71bmy1kqPOL._SX342_.jpg",
-    },
-    {
-      id: 4,
-      nombre: " Godzilla vs. Kong (Blu-ray + DVD + Digital) ",
-      descripcion: "Esta es la descripción del producto 5",
-      precio: 600,
-      imagen: "https://m.media-amazon.com/images/I/81fxlwk4crS._SX342_.jpg",
-    },
-  ];
+
 export default ItemListContainer;

@@ -5,20 +5,22 @@ import { useState, useEffect } from "react";
 const ItemList = ({productos}) => {
     const [cargando,setCargando] = useState(false)
     const [items,setItems] = useState([])
+    
     useEffect(() => {
+        const getProductos = () => {
+            return new Promise((resolve) => {
+                setTimeout(() =>{
+                    resolve(productos);
+                },200);
+            })
+        }
         setCargando(true);
         getProductos().then(result => setItems(result))
         .finally(() => setCargando(false));
-    },[])
-    const getProductos = () => {
-        return new Promise((resolve) => {
-            setTimeout(() =>{
-                resolve(productos);
-            },2000);
-        })
-    }
+    },[productos])
+    
     return (
-     <div className="row">
+     <div className="row justify-content-around">
          {cargando && <p>Cargando productos...</p>}
          
          {items.map(producto =>(
