@@ -11,10 +11,8 @@ const ItemListContainer = () => {
     .catch((error) => console.log("ha habido un error"))
   },[]);
   return (
-        <div className="d-flex justify-content-around">
           <ItemList productos={productos}/>
-        </div>
-       
+        
     );
 };
 
