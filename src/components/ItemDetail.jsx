@@ -15,9 +15,7 @@ const ItemDetail = () => {
         .then((data)=> setProducto(data))
         .catch((error)=>console.log("ha habido un error"));
     },[id])
-    useEffect(()=>{
-
-    })
+    
     return (
         <div className="flex">
             <div className="row no-gutters">
