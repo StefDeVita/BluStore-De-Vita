@@ -3,10 +3,15 @@ import {useParams} from 'react-router-dom'
 import ItemCount from './ItemCount';
 
 const ItemDetail = () => {
-    const [producto,setProducto] = useState({})
+    const [producto,setProducto] = useState({});
     const [cantidadAComprar, setCantidadAComprar] = useState(1);
+    const [agregado,setAgregado] = useState([]);
     const {id} = useParams();
-    const updateCantidad = (nuevoValor) =>{
+    const comprar = () => {
+      setAgregado(agregado.push([producto,cantidadAComprar]));
+      console.log(agregado);
+    }
+    const updateCantidad = (nuevoValor) => {
         setCantidadAComprar(nuevoValor)
     }
     useEffect(()=>{
@@ -43,7 +48,7 @@ const ItemDetail = () => {
               
             </div>
             <div id="botonaniadir" className="d-flex">
-                <button className="btn item-detail-button-comprar">
+                <button onClick={comprar} className="btn item-detail-button-comprar">
                     Agregar {cantidadAComprar}
                 </button>
             </div>
