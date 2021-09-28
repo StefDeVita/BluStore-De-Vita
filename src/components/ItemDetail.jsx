@@ -1,15 +1,24 @@
-import React,{useState,useEffect} from 'react';
-import {useParams} from 'react-router-dom'
+import React,{useState,useEffect,useContext} from 'react';
+import {useParams,useHistory} from 'react-router-dom'
 import ItemCount from './ItemCount';
+import {CartContext} from '../context/CartContext';
+
 
 const ItemDetail = () => {
     const [producto,setProducto] = useState({});
+    const contexto = useContext(CartContext);
     const [cantidadAComprar, setCantidadAComprar] = useState(1);
     const [agregado,setAgregado] = useState([]);
     const {id} = useParams();
+    const history = useHistory();
+
     const comprar = () => {
-      setAgregado(agregado.push([producto,cantidadAComprar]));
-      console.log(agregado);
+      if(agregado.length !== 0){
+        setAgregado([]);
+      }
+      setAgregado([producto,cantidadAComprar]);
+      contexto.agregarItem(producto,cantidadAComprar);
+      history.push("/cart");
     }
     const updateCantidad = (nuevoValor) => {
         setCantidadAComprar(nuevoValor)

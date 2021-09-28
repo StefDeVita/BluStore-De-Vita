@@ -130,10 +130,25 @@
 .btn{
   margin: 1rem;
 }
+#total{
+  margin:1rem;
+  font-size:larger;
+}
 .card{
   width: 16rem;
   border: 0.2rem solid;
   height: auto;
+  max-height: min-content;
+  border-radius: 0.2rem;
+  margin: 0.5rem;
+  flex-wrap: wrap;
+  min-height: 550px;
+}
+.card-chica{
+  width: 16rem;
+  border: 0.2rem solid;
+  height: auto;
+  max-height: min-content;
   border-radius: 0.2rem;
   margin: 0.5rem;
   flex-wrap: wrap;
@@ -202,6 +217,9 @@ a{
 .card-text{
   text-align: center;
   font-size: 1.5rem;
+}
+.nombre{
+ font-weight: bold;
 }
 #confirmar{
   margin:1rem;

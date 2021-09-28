@@ -9,7 +9,7 @@ const NavBar = () => {
             <Link className="nav-item" to="/">Inicio</Link>
             <Link className="nav-item" to="/category/0">Productos Digitales</Link>
             <Link className="nav-item" to="/category/1">Productos Fisicos</Link>
-            <CartWidget/>
+            <Link className="nav-item" to="/cart"><CartWidget/></Link>
         </nav>
     )
 }

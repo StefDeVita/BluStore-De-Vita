@@ -22,15 +22,15 @@ const ItemCount = props => {
     }
     return (
         
-        <div className="card flex-center" style={{width: "18rem"}}>
+        <div className="card-chica flex-center" style={{width: "18rem"}}>
             <div className="card-body center">
                 <h5 className="card-title">Elija la cantidad a Añadir</h5>
                 <p className="card-text">Deseo agregar esta cantidad al carrito</p>
                 <div className="card-text">{number}</div>
                 <div className="card-text">
-                    <a onClick={restarcontador} href="#" className="btn btn-primary">-</a>
+                    <button onClick={restarcontador}  className="btn btn-primary">-</button>
 
-                    <a onClick={sumarcontador} href="#" className="btn btn-primary">+</a>
+                    <button onClick={sumarcontador} className="btn btn-primary">+</button>
                 </div>
             </div>
         </div>
