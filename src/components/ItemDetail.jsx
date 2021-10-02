@@ -2,12 +2,16 @@ import React,{useState,useEffect,useContext} from 'react';
 import {useParams,useHistory} from 'react-router-dom'
 import ItemCount from './ItemCount';
 import {CartContext} from '../context/CartContext';
+import {getFirestore} from '../firebase/index'
+import NotFound from './NotFound';
 
 
 const ItemDetail = () => {
     const [producto,setProducto] = useState({});
     const contexto = useContext(CartContext);
+    const [existe,setExiste] = useState(true);
     const [cantidadAComprar, setCantidadAComprar] = useState(1);
+    const [loading,setLoading] = useState(false)
     const [agregado,setAgregado] = useState([]);
     const {id} = useParams();
     const history = useHistory();
@@ -24,13 +28,31 @@ const ItemDetail = () => {
         setCantidadAComprar(nuevoValor)
     }
     useEffect(()=>{
-        fetch(`http://localhost:3001/productos/${id}`)
-        .then((response)=>response.json())
-        .then((data)=> setProducto(data))
-        .catch((error)=>console.log("ha habido un error"));
-    },[id])
-    
-    return (
+        setLoading(true)  
+        const db = getFirestore();
+        const collection = db.collection('productos');
+        const producto =collection.doc(id);
+        
+        producto.get()
+        .then((doc)=>{
+          if(!doc.exists){
+            setExiste(false)
+          }else{
+            setProducto(doc.data())
+          }
+        })
+        .catch((error)=>console.log("ha habido un error",error))
+        .finally(setLoading(false));
+    },[id]);
+    if(!existe){
+      return <NotFound/>
+    }
+    if(loading){
+      return <p>Cargando productos...</p>
+    }
+    else{
+      return (
+        
         <div className="flex">
             <div className="row no-gutters">
         <div className="col-md-4">
@@ -66,6 +88,6 @@ const ItemDetail = () => {
         </div>
         </div>
     );
-};
+}};
 
 export default ItemDetail;
