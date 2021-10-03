@@ -58,7 +58,7 @@ const CartProvider = ({children}) => {
         calcularTotal();
     }
     return (
-        <CartContext.Provider value={{items, agregarItem, borrar, precio,eliminarItem }}>
+        <CartContext.Provider value={{cantidad,items, agregarItem, borrar, precio,eliminarItem }}>
           {children}
         </CartContext.Provider>
       );

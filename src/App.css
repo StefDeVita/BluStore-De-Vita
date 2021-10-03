@@ -98,6 +98,24 @@
 .flex-center{
   align-self: center;
 }
+.badge{
+  position: absolute;
+  top:1.3rem;
+  background:#ff508e;
+  text-align: center;
+  border-radius: 30px 30px 30px 30px;
+  color:white;
+  padding:5px 10px;
+  font-size:0.8rem;
+}
+.carrito-vacio{
+  text-decoration: none;
+  align-self: center;
+  font-size: 4rem;
+}
+.carrito-vacio:hover{
+  color: hotpink;
+}
 .notfound a>.arrow {
   position: relative;
   top: -2px;

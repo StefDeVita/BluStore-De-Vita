@@ -1,12 +1,15 @@
 import { useContext } from "react";
-
+import {Link} from 'react-router-dom'
 import {CartContext} from '../context/CartContext';
 import CartItem from './CartItem'
 
 const Cart = () => {
   const contexto = useContext(CartContext);
   if (contexto.items.length === 0) {
-    return <div className="cart-vacio">El carrito esta vacío</div>;
+    return(
+    <div className="d-flex container justify-content-center"> 
+    <Link className="carrito-vacio" to="/">El carrito esta vacio, volver a Inicio</Link>
+    </div>)
   } else {
     return (
       <>
