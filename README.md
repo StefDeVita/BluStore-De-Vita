@@ -6,8 +6,4 @@ Para iniciar la aplicacion simplemente correr el siguiente comando desde el dire
 ```
 npm start
 ```
-Para que la misma no tire un error es necesario inicializar el json-server que cuenta con los productos de la siguiente forma (tambien estando desde el directorio base de la app)
-
-```
-json-server --watch src/mocks/db.json --port 3001
-```
+La aplicacion usa Firebase para simular una base de datos desde la que se toman los productos a mostrar en el sitio.
