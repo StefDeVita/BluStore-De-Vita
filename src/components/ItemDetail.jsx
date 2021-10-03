@@ -38,7 +38,7 @@ const ItemDetail = () => {
           if(!doc.exists){
             setExiste(false)
           }else{
-            setProducto(doc.data())
+            setProducto({id: doc.id, ...doc.data() })
           }
         })
         .catch((error)=>console.log("ha habido un error",error))

@@ -29,6 +29,7 @@ const CartProvider = ({children}) => {
             return item.id ===id;
         })
         nuevosItems.splice(i,1)
+        
         setItems([...nuevosItems]);
         calcularTotal();
     }
@@ -38,15 +39,21 @@ const CartProvider = ({children}) => {
             item,
             cantidad,
         };
+        
         const i = items.findIndex((item)=>{
             return item.item.id === objeto.item.id;
         });
+        
         if(i===-1){
             items.push(objeto);
         }
         else{
-            items[i].cantidad = objeto.cantidad;
+            items[i].cantidad += objeto.cantidad;
+            if(items[i].cantidad >= items[i].item.stock){
+                items[i].cantidad = items[i].item.stock
+            }
         }
+        
         setItems([...items]);
         calcularTotal();
     }
