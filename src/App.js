@@ -16,7 +16,7 @@ function App() {
         <NavBar/>
         <Switch>
           <Route exact path="/" component={ItemListContainer} />
-          <Route exact path="/blustore-de-vita" component={ItemListContainer} />
+          <Route exact path="/blustore-de-vita/" component={ItemListContainer} />
           <Route exact path="/category/:categoria" component={ItemsCategoria} />
           <Route exact path="/product/:id" component={ItemDetail}/>
           <Route exact path="/cart" component={Cart}/>
