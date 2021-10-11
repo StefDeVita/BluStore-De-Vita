@@ -26,7 +26,6 @@ const Checkout = () => {
         .catch((error)=>console.log("ha habido un error",error))
         .finally(setLoading(false));
     },[id]);
-    console.log(orden)
     if(!existe){
         <NotFound/>
     }
