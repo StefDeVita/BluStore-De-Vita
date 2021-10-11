@@ -98,6 +98,17 @@
 .flex-center{
   align-self: center;
 }
+.comprar{
+  text-decoration: none;
+  color: #212529;
+}
+.form-group{
+  padding-top:1.5rem;
+}
+.comprar:hover{
+  text-decoration: none;
+  color: #212529;
+}
 .badge{
   position: absolute;
   top:1.3rem;

@@ -6,6 +6,7 @@ const CartProvider = ({children}) => {
     const [items,setItems] = useState([]);
     const [cantidad,setCantidad]=useState(0);
     const [precio,setPrecio]=useState(0);
+    const [id,setId] = useState("")
 
     const calcularTotal = () =>{
         let cantidad = 0;
@@ -17,6 +18,9 @@ const CartProvider = ({children}) => {
         })
         setCantidad(cantidad);
         setPrecio(total);
+    }
+    const setIdCompra = (id) =>{
+        setId(id)
     }
     const borrar = () =>{
         setItems([]);
@@ -58,7 +62,7 @@ const CartProvider = ({children}) => {
         calcularTotal();
     }
     return (
-        <CartContext.Provider value={{cantidad,items, agregarItem, borrar, precio,eliminarItem }}>
+        <CartContext.Provider value={{id,cantidad,items, agregarItem, borrar, precio,eliminarItem,setIdCompra }}>
           {children}
         </CartContext.Provider>
       );

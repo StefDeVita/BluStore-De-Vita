@@ -7,6 +7,7 @@ import ItemDetail from './components/ItemDetail';
 import ItemsCategoria from './components/ItemsCategoria';
 import Cart from './components/Cart';
 import CartProvider from './context/CartContext'
+import Checkout from './components/Checkout';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/category/:categoria" component={ItemsCategoria} />
           <Route exact path="/product/:id" component={ItemDetail}/>
           <Route exact path="/cart" component={Cart}/>
+          <Route exact path="/checkout/:id" component={Checkout}/>
           <Route exact path="*" component={NotFound}/>
         </Switch>
       </BrowserRouter>
