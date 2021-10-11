@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/blustore-de-vita/static/css/main.dbc0bec0.chunk.css",
+    "main.js": "/blustore-de-vita/static/js/main.87f08fb4.chunk.js",
+    "main.js.map": "/blustore-de-vita/static/js/main.87f08fb4.chunk.js.map",
+    "runtime-main.js": "/blustore-de-vita/static/js/runtime-main.19462d11.js",
+    "runtime-main.js.map": "/blustore-de-vita/static/js/runtime-main.19462d11.js.map",
+    "static/js/2.0ccedb45.chunk.js": "/blustore-de-vita/static/js/2.0ccedb45.chunk.js",
+    "static/js/2.0ccedb45.chunk.js.map": "/blustore-de-vita/static/js/2.0ccedb45.chunk.js.map",
+    "index.html": "/blustore-de-vita/index.html",
+    "static/css/main.dbc0bec0.chunk.css.map": "/blustore-de-vita/static/css/main.dbc0bec0.chunk.css.map",
+    "static/js/2.0ccedb45.chunk.js.LICENSE.txt": "/blustore-de-vita/static/js/2.0ccedb45.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.19462d11.js",
+    "static/js/2.0ccedb45.chunk.js",
+    "static/css/main.dbc0bec0.chunk.css",
+    "static/js/main.87f08fb4.chunk.js"
+  ]
+}
