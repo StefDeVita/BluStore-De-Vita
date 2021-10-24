@@ -54,15 +54,15 @@ const ItemDetail = () => {
       return (
         
         <div className="flex">
-            <div className="row no-gutters">
-        <div className="col-md-4">
+            <div className="row">
+        <div className="col-2">
           <img
             src={producto.imagen}
-            className="card-img item-detail-image"
+            className="card-img img-fluid"
             alt={producto.nombre}
           />
         </div>
-        <div className="col-md-8">
+        <div className="col">
           <div className="card-body item-detail-card-description">
             <div className="item-detail-card-description-body">
               <h5 className="card-title item-detail-name">{producto.nombre}</h5>

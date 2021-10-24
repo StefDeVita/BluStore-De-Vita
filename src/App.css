@@ -189,6 +189,12 @@
 a{
   text-decoration: none;
 }
+.col-2{
+  padding:0;
+}
+.col{
+  padding: 0;
+}
 .card-img-top{
   height: 40vh;
   object-fit: contain;
