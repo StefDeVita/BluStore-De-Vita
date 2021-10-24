@@ -1,4 +1,4 @@
-import { useContext,useState,useEffect } from "react";
+import { useContext,useState} from "react";
 import {Link,useHistory} from 'react-router-dom'
 import {CartContext} from '../context/CartContext';
 import CartItem from './CartItem';

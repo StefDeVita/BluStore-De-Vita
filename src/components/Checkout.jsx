@@ -1,11 +1,12 @@
 import React,{useContext,useState,useEffect} from 'react';
 import {useParams} from 'react-router-dom'
-import {CartContext} from '../context/CartContext';
 import {getFirestore} from '../firebase/index'
+import {CartContext} from '../context/CartContext';
 import NotFound from './NotFound'
 
 const Checkout = () => {
     const {id} = useParams();
+    const contexto = useContext(CartContext);
     const [loading,setLoading] = useState(false)
     const [existe,setExiste] = useState(true);
     const[orden,setOrden] = useState({name:"",surname:"",phone:"",items:[],date:{}})
@@ -24,8 +25,20 @@ const Checkout = () => {
           }
         })
         .catch((error)=>console.log("ha habido un error",error))
+        .then(()=>{
+            contexto.items.forEach(item => {
+               const productos = db.collection("productos");
+               const producto = productos.doc(item.item.id)
+               console.log(item,item.cantidad)
+               producto.update({
+                   stock: item.item.stock - item.cantidad
+               })
+               .catch((error)=> console.log("ha habido un error",error))
+
+            });
+        })
         .finally(setLoading(false));
-    },[id]);
+    },[contexto.items, id]);
     if(!existe){
         <NotFound/>
     }
