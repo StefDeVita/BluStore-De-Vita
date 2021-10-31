@@ -27,13 +27,12 @@ const CartProvider = ({children}) => {
         setCantidad(0);
         setPrecio(0);
     }
-    const eliminarItem = (id) =>{
+    const eliminarItem = (idRecibido) =>{
         const nuevosItems = items;
-        const i = nuevosItems.findIndex((item)=>{
-            return item.id ===id;
-        })
+        const i = nuevosItems.findIndex(item=>
+            item.item.id === idRecibido
+        );
         nuevosItems.splice(i,1)
-        
         setItems([...nuevosItems]);
         calcularTotal();
     }

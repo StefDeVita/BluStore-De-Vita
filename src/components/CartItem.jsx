@@ -5,7 +5,7 @@ import {CartContext} from '../context/CartContext';
 const CartItem = (props) => {
   const { item, cantidad } = props.item;
   const contexto = useContext(CartContext);
-
+  
   return (
     <div className="card">
       <div>
