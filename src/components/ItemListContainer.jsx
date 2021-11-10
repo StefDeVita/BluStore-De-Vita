@@ -10,7 +10,7 @@ const ItemListContainer = () => {
     coleccionProductos.get()
     .then((querySnapshot) =>{
       if(querySnapshot.empty){
-        console.log("No hay productos")
+        console.log("No se encontraron productos")
       }else{
         setProductos(querySnapshot.docs.map((doc)=>({id: doc.id, ...doc.data() })));
       }
