@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/blustore-de-vita/static/css/main.b554a910.chunk.css",
-    "main.js": "/blustore-de-vita/static/js/main.08d0484a.chunk.js",
-    "main.js.map": "/blustore-de-vita/static/js/main.08d0484a.chunk.js.map",
+    "main.js": "/blustore-de-vita/static/js/main.0870c384.chunk.js",
+    "main.js.map": "/blustore-de-vita/static/js/main.0870c384.chunk.js.map",
     "runtime-main.js": "/blustore-de-vita/static/js/runtime-main.19462d11.js",
     "runtime-main.js.map": "/blustore-de-vita/static/js/runtime-main.19462d11.js.map",
     "static/js/2.0ccedb45.chunk.js": "/blustore-de-vita/static/js/2.0ccedb45.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.19462d11.js",
     "static/js/2.0ccedb45.chunk.js",
     "static/css/main.b554a910.chunk.css",
-    "static/js/main.08d0484a.chunk.js"
+    "static/js/main.0870c384.chunk.js"
   ]
 }
